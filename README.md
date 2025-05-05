@@ -3,6 +3,58 @@
 This repository contains the source code and the documentation of the Tabular Synthetic Data Generation Project for the Introduction to Data Security course on ELTE.
 
 
+## Introducing basic concepts about the topic
+
+### Tabular data
+Tabular data, sometimes also called structured data, refers to a data format organized in a table, where data points are represented as rows and features or attributes as columns. In tabular data, each row corresponds to an individual sample or observation, and each column represents a distinct feature or variable that characterizes that sample. These features can be of different types, including continuous (numerical) values and categorical (qualitative) values. Categorical features might include binary variables, ordinal values, or high-cardinality categorical variables, which can take many distinct values (Shwartz-Ziv et al., 2022)
+
+Tabular data is ubiquitous in a variety of fields, including medicine, finance, marketing, climate science, and many others, where relational databases are frequently employed. The most prominent characteristic of tabular data is its structured nature, making it easy to store, analyze, and process using machine learning and statistical methods. The relational database structure, where data is organized into tables with rows and columns, is particularly well-suited for tabular data. This makes it an essential form of data in industries that rely heavily on database-driven applications, such as healthcare, finance and commerce (Shwartz-Ziv et al., 2022).
+
+Unlike homogeneous data types like images, audio, or text, which are often represented by a single type of feature, tabular data is heterogeneous (Shwartz-Ziv et al., 2022). This means it can consist of a variety of feature types, such as numerical, categorical, binary, and ordinal, which makes its analysis more complex but also more powerful. This complexity makes tabular data both challenging and rich for predictive modeling and machine learning applications. Tabular data is particularly important because it is often used in situations where data comes from diverse sources and needs to be integrated for analysis. For instance, in the field of finance, tabular data may represent historical stock prices, financial reports, and economic indicators, with each feature having a different type and meaning. Similarly, in climate science, tabular data can represent temperature, precipitation, and other variables over time, collected across different regions (Shwartz-Ziv et al., 2022).
+
+The use of tabular data has a long history. Before the digital age, tabular data was one of the primary ways data was recorded and analyzed. Early statistical methods were applied to data organized in tabular form, and much of the development of machine learning methods has been built upon this structure. In fact, many of the traditional machine learning techniques still dominate when it comes to analyzing tabular data, such as decision trees, random forests, and gradient-boosted decision trees (GBDT), which are highly effective in handling the variety of data types found in tabular datasets (Borisov et al., 2022).
+
+However, the development of deep learning and neural networks, which were originally designed for homogeneous data types like images or text, has posed challenges when applied to tabular data. Deep learning models, particularly neural networks, have made impressive strides in tasks such as image recognition, natural language processing, and audio analysis, but when applied to tabular data, they often face difficulties due to the lack of locality, mixed feature types, missing values, and limited prior knowledge of dataset structure [1]. Despite these challenges, research continues into improving deep learning models for tabular data, and there have been significant efforts to develop architectures specifically designed for this type of data [2].
+As deep learning continues to evolve, new techniques are being developed to better handle tabular data, which remains a critical part of data-driven decision-making in many sectors [2].
+
+### Synthetic Data
+Synthetic data refers to data that is artificially generated rather than being collected from real-world events or measurements. This type of data is typically created using algorithms that simulate real-world scenarios, preserving the underlying statistical properties of the original data without using actual sensitive information. Synthetic data is commonly used in fields like machine learning, privacy protection, and data augmentation because it allows researchers and practitioners to generate large datasets without violating privacy concerns or having access to sufficient real-world data.
+For example, in healthcare, synthetic data might be generated to simulate patient records without using real patient data. In this way, synthetic data can be used for training machine learning models, conducting research, or testing algorithms, while mitigating the risk of privacy breaches or data scarcity. Similarly, in the financial sector, synthetic datasets might be used to test trading algorithms without using proprietary or sensitive financial data.
+There are several advantages to using synthetic data. One of the primary benefits is that it can be tailored to the needs of specific applications, such as generating rare events or specific conditions that may not be present in real-world data. Additionally, synthetic data can be used to supplement real-world data, especially when the available data is sparse or difficult to obtain. Furthermore, synthetic data generation can help avoid the limitations associated with data collection, such as biases, inaccuracies, or ethical concerns related to using real data.
+
+## Synthetic Data Generation Algorithms
+The process of generating synthetic data involves algorithms that model the underlying patterns and structures of real-world datasets. These algorithms typically fall into a few categories based on the approach they use:
+
+1.	**Statistical Methods**: These methods rely on statistical models to generate synthetic data that mimics the distribution and relationships found in the original dataset. For example, a Gaussian distribution or other parametric models can be used to generate synthetic samples based on the mean and variance of the data. However, these methods might not capture complex dependencies between features in high-dimensional data.
+   
+2. **Generative Adversarial Networks (GANs)**: GANs are a class of deep learning models that have gained significant popularity for synthetic data generation. They consist of two neural networks—a generator and a discriminator—that work in tandem. The generator creates synthetic data samples, while the discriminator attempts to distinguish between real and synthetic data. Through this adversarial process, the generator improves over time, producing more realistic synthetic data. GANs have been successfully applied to generate images, text, and other types of data.
+   
+3.	**Variational Autoencoders (VAEs)**: VAEs are another deep learning-based method for generating synthetic data. A VAE learns a probabilistic representation of the input data and can generate new data samples by sampling from this learned distribution. VAEs are often used for generating synthetic data in complex domains like image and text generation.
+   
+4.	**Simulation-Based Approaches**: Some synthetic data generation methods rely on domain-specific simulations, where synthetic data is created by mimicking the physical, biological, or economic processes that govern the real-world phenomena being modeled. For instance, synthetic data for autonomous vehicles can be generated by simulating different driving scenarios in a virtual environment.
+   
+5.	**Rule-Based Generation**: In certain cases, synthetic data can be generated by applying a set of predefined rules or constraints to create data samples. These rules may be based on expert knowledge about the data or the domain of interest. Rule-based approaches are often simpler but can be effective in domains with well-understood relationships between features.
+
+6.	**Data Augmentation**: Data augmentation techniques, such as adding noise or perturbations to existing data, can also be used to generate synthetic data. This is especially useful in machine learning tasks like image classification, where slight alterations to original data points (e.g., rotating images or changing colors) can help increase the size of a dataset and improve the robustness of models.
+   
+## Evaluation Metrics for Synthetic Data - Galloni
+When generating synthetic data, it is important to assess how well it represents the original data, particularly when the synthetic data is used for machine learning or statistical analysis. Evaluation metrics help determine the quality of synthetic data by comparing it to the real data in terms of various characteristics, such as accuracy, diversity, and realism. One framework for evaluating synthetic data is Galloni's metrics, which provide a way to quantitatively measure how well synthetic data approximates real data in several dimensions.
+
+1.	**Statistical Similarity**: This metric measures how closely the statistical properties of synthetic data match those of the original dataset. Common statistical measures include the mean, variance, and higher-order moments (such as skewness and kurtosis). Additionally, measures like the Kolmogorov-Smirnov test can be used to compare distributions of individual features.
+
+2.	**Distributional Fidelity**: This metric evaluates how well the synthetic data preserves the joint distribution of multiple features in the dataset. Since synthetic data can sometimes fail to capture complex dependencies between features, this metric helps ensure that the relationships and correlations between features in the synthetic dataset align with those in the real-world data.
+
+3.	**Diversity**: Synthetic data should exhibit sufficient diversity, meaning that it should not merely reproduce a narrow subset of the real data. Diversity is especially important when generating synthetic data for machine learning, as a lack of diversity can lead to overfitting or biased models. This metric assesses the spread of the synthetic data across the feature space, ensuring it is representative of the variability found in the real data.
+   
+4.	**Utility**: One of the most important metrics for evaluating synthetic data is how useful it is for downstream tasks such as machine learning. The synthetic data should perform similarly to real data when used for training models. Metrics such as model accuracy, precision, recall, and F1 score can be used to measure how well models trained on synthetic data generalize to real data.
+   
+5.	**Privacy Preservation**: In many applications, synthetic data is used to protect sensitive information. Therefore, an important metric is the ability of the synthetic data to maintain privacy by ensuring that individual records in the original dataset cannot be identified or reconstructed from the synthetic data. Techniques such as differential privacy are often used to evaluate how much information about individuals is retained in the synthetic data.
+    
+6.	**Visual Quality**: For image or visual data, evaluation can also include visual fidelity, assessing how realistic the generated images or video appear to human observers. This can be done using human ratings or more automated techniques, such as perceptual similarity metrics (e.g., Structural Similarity Index or SSIM).
+    
+In summary, synthetic data plays a critical role in a variety of applications, especially when real-world data is scarce, sensitive, or difficult to obtain. The generation of synthetic data can be achieved through various algorithms, each suited to different types of data and applications. Evaluating synthetic data is equally important, and metrics like those proposed by Galloni help ensure that the generated data maintains statistical, distributional, and utility characteristics similar to real data, while also addressing privacy concerns and preserving diversity.
+
+
 ## Challenges in Synthetic Tabular Data Generation
 
 ### Preserving Statistical Properties and Data Quality
@@ -88,6 +140,14 @@ see if performance holds up.
 
 
 ## References
+
+Shwartz-Ziv, R., & Armon, A. (2022). Tabular data: Deep learning is not all you need. Information Fusion, 81, 84-90.
+
+Borisov, V., Leemann, T., Seßler, K., Haug, J., Pawelczyk, M., & Kasneci, G. (2022). Deep neural networks and tabular data: A survey. IEEE transactions on neural networks and learning systems.
+
+Figueira, A., & Vaz, B. (2022). Survey on synthetic data generation, evaluation methods and GANs. Mathematics, 10(15), 2733.
+
+Endres, M., Mannarapotta Venugopal, A., & Tran, T. S. (2022, August). Synthetic data generation: A comparative study. In Proceedings of the 26th international database engineered applications symposium (pp. 94-102).
 
 Miletic, M.; Sariyar, M. Challenges of Using Synthetic Data Generation Methods for
 Tabular Microdata. Appl. Sci. 2024, 14, 5975. https://doi.org/10.3390/app14145975
