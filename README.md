@@ -149,6 +149,14 @@ In healthcare settings, tabular synthetic data generation effectively addresses 
 ### Retail and E-commerce
 Retailers enhance their operations through synthetic tabular data in multiple ways. They create synthetic customer profiles for personalization algorithm development and generate realistic purchase histories to improve recommendation systems. According to Hernandez and Greenwald (2021), developing inventory management models with synthetic sales data provides significant advantages. Retailers also test pricing strategies using synthetic market response data to optimize revenue without risking actual market disruption.
 
+## Ethical Considerations and Bias Mitigation in Tabular Data
+Real-world tabular data often contains biases reflecting historical inequalities or flawed collection processes. These biases are particularly concerning in tabular contexts as they directly impact critical decisions in domains like lending, insurance, and healthcare. Implementing tabular synthetic data generation requires addressing these concerns through multiple approaches.
+
+Pre-processing techniques for fairness include identifying and measuring bias across protected attributes such as gender, age, and race. Re-sampling or re-weighting training data ensures balanced demographic representation, while removing proxy variables that correlate with protected attributes but lack business criticality helps prevent bias propagation. Applying transformations that reduce discrimination while preserving utility completes this initial phase.
+
+During model training, parameters can be adjusted to prioritize fairness through adding constraints to the generator's objective function. Implementing adversarial debiasing techniques allows discriminators to penalize biased synthetic records, while conditional generation ensures balanced subgroup representation. Regularizing the learning process prevents models from capturing discriminatory patterns in the original data.
+
+After generation, verification and correction steps help ensure fairness through measuring statistical parity across protected groups and adjusting conditional distributions to enforce fairness metrics. Applying post-hoc corrections to problematic variables or records and verifying downstream model behavior across demographic groups completes a comprehensive approach to ethical synthetic data generation.
 
 
 ## References
