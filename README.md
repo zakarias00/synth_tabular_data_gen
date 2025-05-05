@@ -2,6 +2,16 @@
 
 This repository contains the source code and the documentation of the Tabular Synthetic Data Generation Project for the Introduction to Data Security course on ELTE.
 
+# Exploring the Motivations for Synthetic Tabular Data
+Synthetic data generation has emerged as a critical solution for numerous challenges in data science and analytics, offering organizations innovative ways to overcome limitations they face with real-world data. While synthetic data can take many forms, tabular synthetic data—artificial data structured in rows and columns mimicking real databases—has become particularly valuable across industries.
+
+Privacy concerns represent one of the most compelling reasons to use synthetic data. According to Osorio-Marulanda et al. (2024), synthetic data provides a powerful privacy-preserving mechanism that allows organizations to share and analyze sensitive information without risking exposure of personally identifiable information or protected health information. This is particularly crucial in sectors like healthcare, finance, and government, where data often contains highly sensitive personal information that cannot be shared in its original form.
+
+It is a struggle sometimes to build robust models, when dealing with rare events or new product development scenarios. Figueira and Vaz (2022) highlight how synthetic data can effectively augment existing datasets or even create entirely new ones to support model training and testing. This capability proves particularly valuable in situations where collecting real-world data is expensive or time-consuming. It can help to build more reliable models and gain new insights.
+
+Class imbalance represents a challenge in machine learning application. Pathare et al. (2023) demonstrate how synthetic data generation can address this problem by creating additional samples for minority classes, thereby improving overall model performance and reducing bias. In fields ranging from fraud detection to medical diagnostics, where positive cases may be extremely rare, the ability to generate realistic synthetic examples of these underrepresented classes can dramatically improve model training.
+
+Beyond these primary motivations, synthetic data offers additional benefits that make it increasingly attractive. Galloni et al. (2020, 2023) discuss evaluation metrics that help ensure synthetic data maintains the utility of original data while providing sufficient privacy protection. These metrics help organizations quantify the trade-offs involved in synthetic data generation and select appropriate approaches based on their specific use case requirements. As the field continues to evolve, improved evaluation methodologies are making it easier for organizations to confirm that their synthetic data initiatives are delivering the intended benefits.
 
 ## Introducing basic concepts about the topic
 
