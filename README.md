@@ -138,6 +138,18 @@ data should get results comparable to using the original data. In practice, a co
 test is training predictive models on synthetic data and evaluating them on real data to
 see if performance holds up.
 
+## Real-World Applications of Tabular Synthetic Data
+
+### Finance and Banking
+Financial institutions leverage synthetic tabular data for numerous critical applications. They create realistic transaction datasets for fraud detection model training and test credit scoring algorithms without exposing sensitive customer data (Assefa, 2020). Additionally, these institutions develop and validate anti-money laundering systems using synthetic suspicious activity patterns, while also generating synthetic market data for algorithm trading strategy development and testing.
+
+### Healthcare and Clinical Research
+In healthcare settings, tabular synthetic data generation effectively addresses privacy concerns while enabling crucial research initiatives. Healthcare organizations generate synthetic electronic health records for medical research and education purposes, while creating synthetic patient cohorts for clinical trial simulation. As demonstrated by Chen et al. (2021), building realistic insurance claims data supports healthcare analytics without privacy risks. This approach particularly benefits rare disease research where real patient data is often limited.
+
+### Retail and E-commerce
+Retailers enhance their operations through synthetic tabular data in multiple ways. They create synthetic customer profiles for personalization algorithm development and generate realistic purchase histories to improve recommendation systems. According to Hernandez and Greenwald (2021), developing inventory management models with synthetic sales data provides significant advantages. Retailers also test pricing strategies using synthetic market response data to optimize revenue without risking actual market disruption.
+
+
 
 ## References
 
@@ -172,3 +184,13 @@ Ping, H., Stoyanovich, J., & Howe, B. (2017). DataSynthesizer: Privacy-Preservin
 Synthetic Datasets. In Proceedings of the 29th International Conference on Scientific
 and Statistical Database Management (SSDBM '17). Association for Computing
 Machinery.
+
+Assefa, S. (2020). Generating synthetic data in finance: opportunities, challenges and pitfalls. Challenges and Pitfalls (July 22, 2020)
+
+Chen, R. J., Lu, M. Y., Chen, T. Y., Williamson, D. F., & Mahmood, F. (2021). Synthetic data in machine learning for medicine and healthcare. Nature Biomedical Engineering.
+
+Hernandez, D., & Greenwald, H. (2021). Synthetic data generation for retail forecasting: Challenges and opportunities. Retail AI Lab Technical Report.
+ 
+Li, S. C., Jiang, X# Tabular Synthetic Data Generation: Applications, Techniques and Implementation
+
+Patki, N., Wedge, R., & Veeramachaneni, K. (2016). The Synthetic Data Vault: Generative modeling for relational databases. 2016 IEEE International Conference on Data Science and Advanced Analytics (DSAA), 399-410.
